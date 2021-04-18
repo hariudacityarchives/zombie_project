@@ -48,8 +48,9 @@ bool Potion::update(float deltaTime) {
 }
 
 void Potion::draw(JEngine::SpriteBatch &sb) {
-  static int textureID =
-      JEngine::ResourceManager::getTexture("Textures/potion.png").id;
+  static int textureID = JEngine::ResourceManager::getTexture(
+                             "../graphicsStuff/Textures/potion.png")
+                             .id;
 
   const glm::vec4 uvRect(0.0f, 0.0f, 1.0f, 1.0f);
 

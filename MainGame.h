@@ -84,8 +84,8 @@ private:
   sys::ParticleEngine2D _particleEngine;
   sys::ParticleBatch2D *_bloodParticleBatch;
 
-  int _screenWidth = 1024;
-  int _screenHeight = 768;
+  int _screenWidth = 800;
+  int _screenHeight = 600;
   int _fps, _currentLevel = 0;
   int _humansKilled, _zombiesKilled, _humansBecomeZombie;
 

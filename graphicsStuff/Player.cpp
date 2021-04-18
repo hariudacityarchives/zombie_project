@@ -60,7 +60,9 @@ void Player::init(float speed, glm::vec2 pos,
   _camera = camera;
   _bullets = bullets;
   _health = 100.0f;
-  _textureID = JEngine::ResourceManager::getTexture("Textures/player.png").id;
+  _textureID = JEngine::ResourceManager::getTexture(
+                   "../graphicsStuff/Textures/player.png")
+                   .id;
 }
 
 void Player::update(const std::vector<std::string> &levelData,

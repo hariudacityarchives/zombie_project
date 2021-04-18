@@ -44,29 +44,32 @@ Level::Level(const std::string &fileName) {
       // associate
       switch (tile) {
       case 'R':
-        _spriteBatch.draw(
-            destRect, uvRect,
-            JEngine::ResourceManager::getTexture("Textures/red_bricks.png").id,
-            0.0f, color);
+        _spriteBatch.draw(destRect, uvRect,
+                          JEngine::ResourceManager::getTexture(
+                              "../graphicsStuff/Textures/red_bricks.png")
+                              .id,
+                          0.0f, color);
         break;
       case 'G':
-        _spriteBatch.draw(
-            destRect, uvRect,
-            JEngine::ResourceManager::getTexture("Textures/glass.png").id, 0.0f,
-            color);
+        _spriteBatch.draw(destRect, uvRect,
+                          JEngine::ResourceManager::getTexture(
+                              "../graphicsStuff/Textures/glass.png")
+                              .id,
+                          0.0f, color);
         break;
       case 'L':
-        _spriteBatch.draw(
-            destRect, uvRect,
-            JEngine::ResourceManager::getTexture("Textures/light_bricks.png")
-                .id,
-            0.0f, color);
+        _spriteBatch.draw(destRect, uvRect,
+                          JEngine::ResourceManager::getTexture(
+                              "../graphicsStuff/Textures/light_bricks.png")
+                              .id,
+                          0.0f, color);
         break;
       case 'B':
-        _spriteBatch.draw(
-            destRect, uvRect,
-            JEngine::ResourceManager::getTexture("Textures/bricks.png").id,
-            0.0f, color);
+        _spriteBatch.draw(destRect, uvRect,
+                          JEngine::ResourceManager::getTexture(
+                              "../graphicsStuff/Textures/bricks.png")
+                              .id,
+                          0.0f, color);
         break;
 
       case '.':

@@ -22,7 +22,9 @@ void Human::init(float speed, glm::vec2 pos) {
 
   _direction = glm::normalize(_direction);
 
-  _textureID = JEngine::ResourceManager::getTexture("Textures/human.png").id;
+  _textureID = JEngine::ResourceManager::getTexture(
+                   "../graphicsStuff/Textures/human.png")
+                   .id;
 }
 
 void Human::update(const std::vector<std::string> &levelData,

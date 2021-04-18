@@ -11,7 +11,9 @@ void Zombie::init(float speed, glm::vec2 pos) {
   _speed = speed;
   _pos = pos;
   _color.setColor(255, 255, 255);
-  _textureID = JEngine::ResourceManager::getTexture("Textures/zombie.png").id;
+  _textureID = JEngine::ResourceManager::getTexture(
+                   "../graphicsStuff/Textures/zombie.png")
+                   .id;
 }
 
 void Zombie::update(const std::vector<std::string> &levelData,

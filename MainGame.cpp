@@ -17,6 +17,8 @@
 #include <iostream>
 #include <random>
 
+#include "FileResources.h"
+
 namespace sys = JEngine; // when lazyness strikes and you can use it
 
 const float HUMAN_SPEED = 0.9804f;
@@ -70,7 +72,7 @@ void MainGame::initSystems() {
   _hudSpriteBatch.init();
   _hudCamera.setPosition(glm::vec2(_screenWidth / 2, _screenHeight / 2));
 
-  _spriteFont = new sys::SpriteFont("../graphicsStuff/Fonts/hacked.ttf", 64);
+  _spriteFont = new sys::SpriteFont(FontFilePath, 64);
 
   _broadcaster.init(_screenWidth, _screenHeight, _spriteFont->getFontHeight(),
                     0.45f);
@@ -88,7 +90,7 @@ void MainGame::initSystems() {
   // init particles
   _bloodParticleBatch = new sys::ParticleBatch2D;
   _bloodParticleBatch->init(
-      1000, 0.0216f, sys::ResourceManager::getTexture("Textures/particle.png"),
+      1000, 0.0216f, sys::ResourceManager::getTexture(TextureParticlePath),
       [](JEngine::Particle2D &p, float deltaTime) {
         p.pos += p.vel * deltaTime;
         p.color.a = (GLubyte)(p.lifeTime * 255.0f);
@@ -98,7 +100,7 @@ void MainGame::initSystems() {
 
 void MainGame::initLevel() {
   // add level 1
-  _levels.push_back(new Level("./graphicsStuff/Levels/level1.txt"));
+  _levels.push_back(new Level(Level1Path));
   _currentLevel = 0;
 
   _bullets = std::vector<Bullet>();
@@ -140,23 +142,19 @@ void MainGame::initLevel() {
 
   // Set up guns
   const float BULLET_SPEED = 11.0f;
-  _player->addGun(
-      new Gun("Magnum", 22, 1, 5.0f, 30, BULLET_SPEED,
-              _audioEngine.loadSoundEffect("Sound/shots/pistol.wav")));
-  _player->addGun(
-      new Gun("Shotgun", 40, 12, 20.0f, 7, BULLET_SPEED,
-              _audioEngine.loadSoundEffect("Sound/shots/shotgun.wav")));
+  _player->addGun(new Gun("Magnum", 22, 1, 5.0f, 30, BULLET_SPEED,
+                          _audioEngine.loadSoundEffect(SoundPistolPath)));
+  _player->addGun(new Gun("Shotgun", 40, 12, 20.0f, 7, BULLET_SPEED,
+                          _audioEngine.loadSoundEffect(SoundShotGunPath)));
   _player->addGun(new Gun("MP5", 8, 1, 11.0f, 20, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect("Sound/shots/cg1.wav")));
+                          _audioEngine.loadSoundEffect(SoundCG1Path)));
   _player->addGun(new Gun("M16", 23, 3, 5.1f, 10, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect("Sound/shots/cg1.wav")));
+                          _audioEngine.loadSoundEffect(SoundCG1Path)));
 }
 
 void MainGame::initShaders() {
   // Compile our color shader
-  _textureProgram.compileShaders(
-      "../graphicsStuff/Shaders/textureShading.vert",
-      "../graphicsStuff/Shaders/textureShading.frag");
+  _textureProgram.compileShaders(ShaderVetexPath, ShaderFragmentPath);
   _textureProgram.addAttribute("vertexPosition");
   _textureProgram.addAttribute("vertexColor");
   _textureProgram.addAttribute("vertexUV");
@@ -455,13 +453,13 @@ void MainGame::drawHUD() {
 
   glm::vec2 pos(10, _screenHeight - 74);
 
-  snprintf(buffer, 100, "Humans : %d", _humans.size());
+  snprintf(buffer, 100, "Humans : %ld", _humans.size());
 
   _spriteFont->draw(_hudSpriteBatch, buffer, pos, glm::vec2(1.0f), 0.0f,
                     sys::ColorRGBA8(255, 255, 255, 255));
 
   pos.y -= 64;
-  snprintf(buffer, 100, "Zombies: %d", _zombies.size());
+  snprintf(buffer, 100, "Zombies: %ld", _zombies.size());
 
   _spriteFont->draw(_hudSpriteBatch, buffer, pos, glm::vec2(1.0f), 0.0f,
                     sys::ColorRGBA8(255, 255, 255, 255));

@@ -29,8 +29,10 @@ void Bullet::draw(JEngine::SpriteBatch &sb) {
   color.setColor(75, 75, 75);
 
   sb.draw(destRect, uv,
-          JEngine::ResourceManager::getTexture("Textures/circle.png").id, 0.0f,
-          color);
+          JEngine::ResourceManager::getTexture(
+              "../graphicsStuff/Textures/circle.png")
+              .id,
+          0.0f, color);
 }
 
 bool Bullet::collideWithAgent(Agent *agent) {

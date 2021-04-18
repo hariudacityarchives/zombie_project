@@ -1,4 +1,5 @@
 #include <vector>
+#include <cstddef>
 
 namespace JEngine {
 extern int decodePNG(std::vector<unsigned char> &out_image,

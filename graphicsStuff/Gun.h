@@ -11,7 +11,7 @@
 class Gun {
 public:
   Gun(std::string name, int fireRate, int bulletsPerShot, float spread,
-      float bulletDamage, float bulletSpeed, JEngine::SoundEffect fireSfx);
+      float bulletDamage, float bulletSpeed);
   ~Gun();
 
   void amplifyDamage();

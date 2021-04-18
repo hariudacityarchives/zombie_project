@@ -79,7 +79,7 @@ private:
   sys::SpriteBatch _hudSpriteBatch;
 
   sys::SpriteFont *_spriteFont;
-  sys::AudioEngine _audioEngine;
+  // sys::AudioEngine _audioEngine;
 
   sys::ParticleEngine2D _particleEngine;
   sys::ParticleBatch2D *_bloodParticleBatch;

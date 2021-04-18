@@ -77,8 +77,8 @@ void MainGame::initSystems() {
   _broadcaster.init(_screenWidth, _screenHeight, _spriteFont->getFontHeight(),
                     0.45f);
 
-  _audioEngine = sys::AudioEngine();
-  _audioEngine.init();
+  //_audioEngine = sys::AudioEngine();
+  //_audioEngine.init();
 
   initLevel();
 
@@ -142,14 +142,10 @@ void MainGame::initLevel() {
 
   // Set up guns
   const float BULLET_SPEED = 11.0f;
-  _player->addGun(new Gun("Magnum", 22, 1, 5.0f, 30, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect(SoundPistolPath)));
-  _player->addGun(new Gun("Shotgun", 40, 12, 20.0f, 7, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect(SoundShotGunPath)));
-  _player->addGun(new Gun("MP5", 8, 1, 11.0f, 20, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect(SoundCG1Path)));
-  _player->addGun(new Gun("M16", 23, 3, 5.1f, 10, BULLET_SPEED,
-                          _audioEngine.loadSoundEffect(SoundCG1Path)));
+  _player->addGun(new Gun("Magnum", 22, 1, 5.0f, 30, BULLET_SPEED));
+  _player->addGun(new Gun("Shotgun", 40, 12, 20.0f, 7, BULLET_SPEED));
+  _player->addGun(new Gun("MP5", 8, 1, 11.0f, 20, BULLET_SPEED));
+  _player->addGun(new Gun("M16", 23, 3, 5.1f, 10, BULLET_SPEED));
 }
 
 void MainGame::initShaders() {
@@ -348,7 +344,7 @@ void MainGame::processInput() {
   while (SDL_PollEvent(&evnt)) {
     switch (evnt.type) {
     case SDL_QUIT:
-      // Exit the game here!
+      _gameState = GameState::EXIT;
       break;
     case SDL_MOUSEMOTION:
       _inputManager.setMouseCoords(evnt.motion.x, evnt.motion.y);

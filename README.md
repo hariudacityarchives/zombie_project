@@ -34,15 +34,15 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 ## Clean Project
 1. Execute `make clean`
 
-##Instruction to Play the Game
+## Instruction to Play the Game
 1. Use Keys 'G' or 'E' to Zoom in or Zoom Out to see the entire Map
 2. Use Keys 'A' 'D' 'W' 'X' to Move the Player Left/Right Up/Down
 3. Use the Mouse to Shoot 'Humans and Zombie'
 
 
-##Know Errors
+## Know Errors
 1. Application Freezing when Hit by the Zombie
 
 
-#Credits
+## Credits
 1. PNG Files from OpenGameArt

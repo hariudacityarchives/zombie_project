@@ -31,8 +31,10 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 1. Compile/Build: `make debug`
 2. Run it: `./build/SnakeGame`.
 
+## Clean Project
+1. Execute `make clean`
 
-#Instruction to Play the Game
+##Instruction to Play the Game
 1. Use Keys 'G' or 'E' to Zoom in or Zoom Out to see the entire Map
 2. Use Keys 'A' 'D' 'W' 'X' to Move the Player Left/Right Up/Down
 3. Use the Mouse to Shoot 'Humans and Zombie'

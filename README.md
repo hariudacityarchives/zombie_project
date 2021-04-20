@@ -43,6 +43,8 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 ## Know Errors
 1. Application Freezing when Hit by the Zombie
+2. Program Crashes - need to Fix the this
+3. Work is Still on-going to perfect this Game
 
 
 ## Credits

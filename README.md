@@ -1,6 +1,6 @@
 # CPPND: Capstone Zombie Project using SDL2 and OPENGL 
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwit7qXj34vwAhXbyzgGHSI6B-kQFjABegQIBBAD&url=https%3A%2F%2Fwww.youtube.com%2Fuser%2Fmakinggameswithben&usg=AOvVaw0od9Rtsmthcfmh_XTP7dDa) excellent Tutorials from youtube
+This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](makinggameswithben) excellent Tutorials from youtube
 
 ## Dependencies for Running Locally
 * cmake >= 3.7

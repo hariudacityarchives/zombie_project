@@ -29,7 +29,8 @@ This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree P
 
 ## Basic Build Instructions
 1. Compile/Build: `make debug`
-2. Run it: `./build/SnakeGame`.
+2. cd build
+3. Run it: `./GameApp`.
 
 ## Clean Project
 1. Execute `make clean`
